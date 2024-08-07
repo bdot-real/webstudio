@@ -231,11 +231,6 @@ export const prebuild = async (options: {
   }
 
   for (const template of options.template) {
-    // default template is always applied no need to check
-    if (template === "vanilla" || template === "ssg") {
-      continue;
-    }
-
     // Template is local user template
     if (template.startsWith(".") || template.startsWith("/")) {
       continue;
@@ -259,17 +254,10 @@ export const prebuild = async (options: {
   const routesDir = join(appRoot, "routes");
   await rm(routesDir, { recursive: true, force: true });
 
-  await copyTemplates(options.template.includes("ssg") ? "ssg" : "defaults");
-
   // force npm to install with not matching peer dependencies
   await writeFile(join(cwd(), ".npmrc"), "force=true");
 
   for (const template of options.template) {
-    // default template is already applied no need to copy twice
-    if (template === "vanilla" || template === "ssg") {
-      continue;
-    }
-
     await copyTemplates(template);
   }
 
@@ -627,7 +615,7 @@ export const prebuild = async (options: {
 
       import { Fragment, useState } from "react";
       import type { FontAsset, ImageAsset } from "@webstudio-is/sdk";
-      import { useResource } from "@webstudio-is/react-sdk";
+      import { useResource } from "@webstudio-is/react-sdk/runtime";
       ${componentImports}
 
       export const siteName = ${JSON.stringify(projectMeta?.siteName)};
