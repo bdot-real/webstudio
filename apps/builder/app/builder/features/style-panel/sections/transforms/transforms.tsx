@@ -192,7 +192,6 @@ const TransformSection = (
   const contentPanelProps: TransformPanelProps = {
     currentStyle,
     setProperty,
-    deleteProperty,
     propertyValue: properties.value,
   };
 

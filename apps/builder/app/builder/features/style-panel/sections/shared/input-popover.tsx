@@ -1,10 +1,11 @@
 import { type ComponentProps, useState } from "react";
 import {
   keyframes,
+  DeprecatedPopover,
+  DeprecatedPopoverTrigger,
+  DeprecatedPopoverContent,
+  DeprecatedPopoverPortal,
   styled,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
 } from "@webstudio-is/design-system";
 import type { StyleProperty, StyleValue } from "@webstudio-is/css-engine";
 import {
@@ -90,7 +91,7 @@ const Input = ({
 // trigger is used only for positioning
 const Trigger = styled("div", { position: "absolute", width: 0, height: 0 });
 
-const PopoverContentStyled = styled(PopoverContent, {
+const PopoverContentStyled = styled(DeprecatedPopoverContent, {
   minWidth: 0,
   minHeight: 0,
   width: theme.spacing[20],
@@ -120,7 +121,7 @@ export const InputPopover = ({
   onClose: () => void;
 }) => {
   return (
-    <Popover
+    <DeprecatedPopover
       open={isOpen}
       onOpenChange={(nextOpen) => {
         if (nextOpen === false) {
@@ -128,18 +129,20 @@ export const InputPopover = ({
         }
       }}
     >
-      <PopoverTrigger asChild>
+      <DeprecatedPopoverTrigger asChild>
         <Trigger />
-      </PopoverTrigger>
-      <PopoverContentStyled hideArrow sideOffset={-24}>
-        <Input
-          styleSource={styleSource}
-          value={value}
-          property={property}
-          onChange={onChange}
-          onClosePopover={onClose}
-        />
-      </PopoverContentStyled>
-    </Popover>
+      </DeprecatedPopoverTrigger>
+      <DeprecatedPopoverPortal>
+        <PopoverContentStyled hideArrow sideOffset={-24}>
+          <Input
+            styleSource={styleSource}
+            value={value}
+            property={property}
+            onChange={onChange}
+            onClosePopover={onClose}
+          />
+        </PopoverContentStyled>
+      </DeprecatedPopoverPortal>
+    </DeprecatedPopover>
   );
 };

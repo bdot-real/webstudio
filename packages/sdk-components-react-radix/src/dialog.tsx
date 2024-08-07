@@ -14,7 +14,7 @@ import {
   getClosestInstance,
   getInstanceSelectorById,
   type Hook,
-} from "@webstudio-is/react-sdk/runtime";
+} from "@webstudio-is/react-sdk";
 
 /**
  * Naive heuristic to determine if a click event will cause navigate

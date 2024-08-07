@@ -15,9 +15,9 @@ export {
 } from "./components/component-meta";
 export * from "./embed-template";
 export * from "./props";
-export type * from "./context";
+export * from "./context";
 export { getIndexesWithinAncestors } from "./instance-utils";
-export type * from "./hook";
+export * from "./hook";
 export {
   generateWebstudioComponent,
   generateJsxElement,

@@ -3,6 +3,7 @@ import {
   Flex,
   Popover,
   PopoverContent,
+  PopoverPortal,
   PopoverTrigger,
   rawTheme,
   theme,
@@ -27,63 +28,65 @@ export const HelpPopover = ({
   return (
     <Popover {...popoverProps}>
       {children}
-      <PopoverContent
-        avoidCollisions
-        sideOffset={0}
-        // Height of the footer
-        collisionPadding={{ bottom: Number.parseFloat(rawTheme.spacing[11]) }}
-        side={side}
-      >
-        <Flex
-          as="form"
-          target="_blank"
-          direction="column"
-          css={{ padding: theme.spacing[5] }}
-          gap="2"
+      <PopoverPortal>
+        <PopoverContent
+          avoidCollisions
+          sideOffset={0}
+          // Height of the footer
+          collisionPadding={{ bottom: Number.parseFloat(rawTheme.spacing[11]) }}
+          side={side}
         >
-          <Button
-            formAction="https://www.youtube.com/playlist"
-            name="list"
-            value="PL4vVqpngzeT4sDlanyPe99dYl8BgUYCac"
-            prefix={<Youtube1cIcon />}
-            color="destructive"
+          <Flex
+            as="form"
+            target="_blank"
+            direction="column"
+            css={{ px: theme.spacing[7], py: theme.spacing[3] }}
+            gap="2"
           >
-            Learn with videos
-          </Button>
-          <Button
-            formAction="https://docs.webstudio.is/"
-            prefix={<Webstudio1cIcon />}
-            color="gradient"
-          >
-            Learn from docs
-          </Button>
-          <Button
-            formAction="https://discord.gg/UNdyrDkq5r"
-            prefix={<DiscordIcon />}
-            color="primary"
-          >
-            Join the Community
-          </Button>
-          <Button
-            formAction="https://github.com/webstudio-is/webstudio-community/discussions"
-            prefix={<GithubIcon />}
-            color="dark"
-          >
-            Discuss on GitHub
-          </Button>
-          <Button
-            prefix={<BugIcon />}
-            color="dark"
-            onClick={() => {
-              window.open(
-                "https://github.com/webstudio-is/webstudio-community/discussions/new?category=q-a&labels=bug&title=[Bug]"
-              );
-            }}
-          >
-            Report a bug
-          </Button>
-        </Flex>
-      </PopoverContent>
+            <Button
+              formAction="https://www.youtube.com/playlist"
+              name="list"
+              value="PL4vVqpngzeT4sDlanyPe99dYl8BgUYCac"
+              prefix={<Youtube1cIcon />}
+              color="destructive"
+            >
+              Learn with videos
+            </Button>
+            <Button
+              formAction="https://docs.webstudio.is/"
+              prefix={<Webstudio1cIcon />}
+              color="gradient"
+            >
+              Learn from docs
+            </Button>
+            <Button
+              formAction="https://discord.gg/UNdyrDkq5r"
+              prefix={<DiscordIcon />}
+              color="primary"
+            >
+              Join the Community
+            </Button>
+            <Button
+              formAction="https://github.com/webstudio-is/webstudio-community/discussions"
+              prefix={<GithubIcon />}
+              color="dark"
+            >
+              Discuss on GitHub
+            </Button>
+            <Button
+              prefix={<BugIcon />}
+              color="dark"
+              onClick={() => {
+                window.open(
+                  "https://github.com/webstudio-is/webstudio-community/discussions/new?category=q-a&labels=bug&title=[Bug]"
+                );
+              }}
+            >
+              Report a bug
+            </Button>
+          </Flex>
+        </PopoverContent>
+      </PopoverPortal>
     </Popover>
   );
 };

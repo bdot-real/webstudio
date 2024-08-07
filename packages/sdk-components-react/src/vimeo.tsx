@@ -15,7 +15,7 @@ import {
   createContext,
   type ContextType,
 } from "react";
-import { ReactSdkContext } from "@webstudio-is/react-sdk/runtime";
+import { ReactSdkContext } from "@webstudio-is/react-sdk";
 
 // https://developer.vimeo.com/player/sdk/embed
 type VimeoPlayerOptions = {
@@ -332,6 +332,7 @@ export const VimeoContext = createContext<{
   onInitPlayer: () => void;
   status: PlayerStatus;
 }>({
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onInitPlayer: () => {},
   status: "initial",
 });

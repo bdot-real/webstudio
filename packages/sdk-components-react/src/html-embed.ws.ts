@@ -42,7 +42,6 @@ export const propsMeta: WsComponentPropsMeta = {
     code: {
       required: true,
       control: "code",
-      language: "html",
       type: "string",
     },
   },

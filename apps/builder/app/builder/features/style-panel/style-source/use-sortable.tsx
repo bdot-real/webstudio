@@ -10,7 +10,7 @@ import {
   computeIndicatorPlacement,
   toast,
 } from "@webstudio-is/design-system";
-import type { ItemSource } from "./style-source-control";
+import type { ItemSource } from "./style-source";
 
 type UseSortable<Item> = {
   items: Array<Item>;

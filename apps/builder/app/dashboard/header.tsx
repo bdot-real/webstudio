@@ -1,6 +1,6 @@
 import {
   ChevronDownIcon,
-  UpgradeIcon,
+  UploadIcon,
   WebstudioIcon,
 } from "@webstudio-is/icons";
 import {
@@ -95,7 +95,7 @@ const Menu = ({
                 gap: theme.spacing[3],
               }}
             >
-              <UpgradeIcon />
+              <UploadIcon />
               <div>Upgrade to Pro</div>
             </DropdownMenuItem>
           )}

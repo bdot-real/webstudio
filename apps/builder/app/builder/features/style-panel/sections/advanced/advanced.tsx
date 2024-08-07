@@ -152,7 +152,7 @@ export const Section = ({
                   }
                 }}
                 variant="chromeless"
-                size="2"
+                size="1"
                 text="mono"
                 fieldSizing="content"
                 property={property}

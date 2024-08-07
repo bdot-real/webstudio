@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 import { renderToString } from "react-dom/server";
 import { type LoaderFunctionArgs, redirect } from "@remix-run/server-runtime";
 import { isLocalResource, loadResources } from "@webstudio-is/sdk";
-import { ReactSdkContext } from "@webstudio-is/react-sdk/runtime";
+import { ReactSdkContext } from "@webstudio-is/react-sdk";
 import { Page } from "__CLIENT__";
 import { getPageMeta, getRemixParams, getResources } from "__SERVER__";
 import { assetBaseUrl, imageBaseUrl, imageLoader } from "__CONSTANTS__";

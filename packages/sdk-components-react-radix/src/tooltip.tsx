@@ -3,7 +3,7 @@ import {
   getClosestInstance,
   getInstanceSelectorById,
   type Hook,
-} from "@webstudio-is/react-sdk/runtime";
+} from "@webstudio-is/react-sdk";
 
 import {
   forwardRef,

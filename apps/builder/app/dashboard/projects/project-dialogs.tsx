@@ -6,7 +6,7 @@ import {
   Flex,
   Label,
   Text,
-  InputField,
+  DeprecatedTextField,
   DialogActions,
   Dialog as BaseDialog,
   DialogTrigger,
@@ -95,11 +95,11 @@ const DialogContent = ({
           </DialogDescription>
         )}
         {typeof label === "string" ? <Label>{label}</Label> : label}
-        <InputField
+        <DeprecatedTextField
           placeholder={placeholder}
           name="title"
           defaultValue={title}
-          color={errors ? "error" : undefined}
+          state={errors ? "invalid" : undefined}
           onChange={(event) => {
             onChange?.({ title: event.currentTarget.value });
           }}

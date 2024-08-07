@@ -11,7 +11,7 @@ import {
   getIndexWithinAncestorFromComponentProps,
   getInstanceSelectorById,
   type Hook,
-} from "@webstudio-is/react-sdk/runtime";
+} from "@webstudio-is/react-sdk";
 
 export const Tabs: ForwardRefExoticComponent<
   Omit<ComponentProps<typeof Root>, "asChild"> & RefAttributes<HTMLDivElement>

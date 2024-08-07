@@ -21,6 +21,7 @@ import {
   ToolbarButton,
   Popover,
   PopoverTrigger,
+  PopoverPortal,
   PopoverContent,
   IconButton,
   MenuItemButton,
@@ -420,9 +421,16 @@ export const AddressBarPopover = () => {
           <DynamicPageIcon />
         </ToolbarButton>
       </PopoverTrigger>
-      <PopoverContent sideOffset={0} collisionPadding={4} align="start">
-        <AddressBar ref={formRef} onSubmit={() => setIsOpen(false)} />
-      </PopoverContent>
+      <PopoverPortal>
+        <PopoverContent
+          css={{ padding: 0 }}
+          sideOffset={0}
+          collisionPadding={4}
+          align="start"
+        >
+          <AddressBar ref={formRef} onSubmit={() => setIsOpen(false)} />
+        </PopoverContent>
+      </PopoverPortal>
     </Popover>
   );
 };

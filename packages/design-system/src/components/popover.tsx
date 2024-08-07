@@ -12,6 +12,7 @@ const contentStyle = css({
   boxShadow: `${theme.shadows.menuDropShadow}, inset 0 0 0 1px ${theme.colors.borderMenuInner}`,
   background: theme.colors.backgroundMenu,
   borderRadius: theme.borderRadius[6],
+  padding: `${theme.spacing[5]} 0`,
   display: "flex",
   flexDirection: "column",
   maxWidth: "max-content",
@@ -69,9 +70,20 @@ PopoverContent.displayName = "PopoverContent";
 export const PopoverTrigger = Primitive.Trigger;
 export const PopoverClose = Primitive.Close;
 
+export const PopoverContentContainer = styled("div", {
+  margin: `0 ${theme.spacing[7]}`,
+});
+
+export const PopoverMenuItemContainer = styled("div", {
+  display: "flex",
+  margin: `0 ${theme.spacing[3]}`,
+});
+
 export const PopoverMenuItemRightSlot = styled("span", {
   marginLeft: "auto",
   display: "flex",
 });
 
-export const PopoverSeparator = styled(Separator);
+export const PopoverSeparator = styled(Separator, {
+  margin: `${theme.spacing[5]} 0`,
+});

@@ -7,7 +7,7 @@ import {
   getClosestInstance,
   getInstanceSelectorById,
   type Hook,
-} from "@webstudio-is/react-sdk/runtime";
+} from "@webstudio-is/react-sdk";
 import * as Dialog from "./dialog";
 
 export const Sheet = Dialog.Dialog;

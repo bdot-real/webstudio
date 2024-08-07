@@ -5,6 +5,7 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 startTransition(() => {
   if (document.documentElement.dataset.builder === "true") {
     hydrateRoot(
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       document.getElementById("root")!,
       <StrictMode>
         <RemixBrowser />

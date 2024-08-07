@@ -43,6 +43,7 @@ type UseScrollState = {
   onScrollEnd?: () => void;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
 /**

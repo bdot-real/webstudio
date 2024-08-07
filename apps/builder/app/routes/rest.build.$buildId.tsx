@@ -11,7 +11,6 @@ export const loader = async ({
 }: LoaderFunctionArgs): Promise<
   Data & { user: { email: User["email"] } | undefined } & {
     projectDomain: string;
-    projectTitle: string;
   }
 > => {
   try {
@@ -39,7 +38,6 @@ export const loader = async ({
       ...pagesCanvasData,
       user: user ? { email: user.email } : undefined,
       projectDomain: project.domain,
-      projectTitle: project.title,
     };
   } catch (error) {
     // If a Response is thrown, we're rethrowing it for Remix to handle.

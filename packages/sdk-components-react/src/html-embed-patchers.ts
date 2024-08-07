@@ -5,7 +5,10 @@ const isDOMContentLoaded = () => {
   );
 };
 
-const eventListenerTasks: Array<() => void> = [];
+const eventListenerTasks: Array<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  () => void
+> = [];
 
 let domContentLoadedPatched = false;
 

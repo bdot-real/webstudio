@@ -46,15 +46,11 @@ const Code = z.object({
   ...common,
   control: z.literal("code"),
   type: z.literal("string"),
-  language: z.union([z.literal("html"), z.literal("markdown")]),
   defaultValue: z.string().optional(),
 });
 
-const CodeText = z.object({
-  ...common,
+const CodeText = Code.extend({
   control: z.literal("codetext"),
-  type: z.literal("string"),
-  defaultValue: z.string().optional(),
 });
 
 const Color = z.object({

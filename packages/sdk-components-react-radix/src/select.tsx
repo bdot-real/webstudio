@@ -22,7 +22,7 @@ import {
   getClosestInstance,
   getInstanceSelectorById,
   ReactSdkContext,
-} from "@webstudio-is/react-sdk/runtime";
+} from "@webstudio-is/react-sdk";
 
 // wrap in forwardRef because Root is functional component without ref
 export const Select = forwardRef<

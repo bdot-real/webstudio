@@ -8,15 +8,16 @@ const fallbackTransform: TransformValue = (styleValue) => {
   if (styleValue.type === "fontFamily") {
     const firstFontFamily = styleValue.value[0];
 
-    const fontFamily = styleValue.value;
-    const fallbacks = SYSTEM_FONTS.get(firstFontFamily) ?? [
-      DEFAULT_FONT_FALLBACK,
-    ];
-    const value = Array.from(new Set([...fontFamily, ...fallbacks]));
-
+    const fallbacks = SYSTEM_FONTS.get(firstFontFamily ?? "Arial");
+    const fontFamily: string[] = [...styleValue.value];
+    if (Array.isArray(fallbacks)) {
+      fontFamily.push(...fallbacks);
+    } else {
+      fontFamily.push(DEFAULT_FONT_FALLBACK);
+    }
     return {
       type: "fontFamily",
-      value,
+      value: fontFamily,
     };
   }
 };
@@ -55,15 +56,6 @@ export const toValue = (
   }
 
   if (value.type === "keyword") {
-    // The hidden property is used to hide values in the builder
-    // But we can't use none here like its done for image.
-    // As none is not valid in all cases.
-    // Eg: backface-visibility
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility#syntax
-    if (value.hidden === true) {
-      return "";
-    }
-
     return value.value;
   }
 

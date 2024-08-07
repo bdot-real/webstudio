@@ -5,7 +5,7 @@ import {
   useContext,
 } from "react";
 import { Image as WebstudioImage } from "@webstudio-is/image";
-import { ReactSdkContext } from "@webstudio-is/react-sdk/runtime";
+import { ReactSdkContext } from "@webstudio-is/react-sdk";
 
 export const defaultTag = "img";
 
@@ -64,6 +64,15 @@ export const Image = forwardRef<
     if (src.startsWith(assetBaseUrl)) {
       assetName = src.slice(assetBaseUrl.length);
     }
+
+    console.info(
+      "assetName",
+      assetName,
+      "src",
+      src,
+      "assetBaseUrl",
+      assetBaseUrl
+    );
 
     return (
       <WebstudioImage

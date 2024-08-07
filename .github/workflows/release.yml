@@ -55,6 +55,5 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             tag_name,
-            name: tag_name,
             body: changelog,
           })

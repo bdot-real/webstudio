@@ -112,11 +112,11 @@ const editorContentStyle = css({
 const highlightStyle = HighlightStyle.define([
   // darker comment variant from https://github.com/vadimdemedes/thememirror/blob/main/source/themes/ayu-light.ts#L17-L20
   {
-    tag: [tags.comment, tags.annotation],
+    tag: tags.comment,
     color: "#787b8099",
   },
   {
-    tag: [tags.string, tags.special(tags.brace), tags.regexp, tags.url],
+    tag: [tags.string, tags.special(tags.brace), tags.regexp],
     color: "#5D90CD",
   },
   {
@@ -132,7 +132,7 @@ const highlightStyle = HighlightStyle.define([
     color: "#C52727",
   },
   {
-    tag: [tags.angleBracket, tags.tagName, tags.attributeName, tags.separator],
+    tag: [tags.angleBracket, tags.tagName, tags.attributeName],
     color: "#606060",
   },
   {

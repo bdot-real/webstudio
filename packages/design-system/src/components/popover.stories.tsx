@@ -5,11 +5,11 @@ import {
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
+  PopoverContentContainer,
+  PopoverMenuItemContainer,
   PopoverSeparator,
 } from "./popover";
 import { MenuItemButton } from "./menu";
-import { theme } from "../stitches.config";
-import { Flex } from "./flex";
 
 export default {
   title: "Library/Popover",
@@ -21,15 +21,15 @@ const PopoverDemo = () => (
       <Button>Open</Button>
     </PopoverTrigger>
     <PopoverContent>
-      <Flex css={{ padding: theme.spacing[7] }}>
+      <PopoverContentContainer>
         <Text>Some content</Text>
-      </Flex>
+      </PopoverContentContainer>
       <PopoverSeparator />
-      <Flex css={{ padding: theme.spacing[3] }}>
+      <PopoverMenuItemContainer>
         <PopoverClose asChild>
           <MenuItemButton>Close</MenuItemButton>
         </PopoverClose>
-      </Flex>
+      </PopoverMenuItemContainer>
     </PopoverContent>
   </Popover>
 );

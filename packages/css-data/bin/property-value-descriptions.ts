@@ -1,4 +1,4 @@
-/* eslint-disable func-style */
+/* eslint-disable no-console, func-style */
 import * as fs from "node:fs";
 import * as path from "node:path";
 import type { CreateChatCompletionResponse } from "openai";

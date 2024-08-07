@@ -14,7 +14,7 @@ type FontWeightItem = {
 const allFontWeights: Array<FontWeightItem> = (
   Object.keys(fontWeights) as Array<FontWeight>
 ).map((weight) => ({
-  label: `${weight} - ${fontWeights[weight].label}`,
+  label: `${fontWeights[weight].label} (${weight})`,
   weight,
 }));
 
