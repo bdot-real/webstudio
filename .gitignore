@@ -60,3 +60,6 @@ dist
 
 # should be here otherwise if placed inside prisma-client pnpm deploy doesn't copy it
 packages/prisma-client/src/__generated__
+apps/builder/.env
+apps/builder/.env
+verify-jwt.js
